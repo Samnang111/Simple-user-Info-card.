@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden { display: none; }
+        body { font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-xs">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-medium text-gray-800">Enter Your Info</h1>
+        </div>
+        
+        <form id="userForm" class="bg-white rounded-lg shadow p-6 space-y-4">
+            <div>
+                <label class="block text-gray-700 mb-1">Name</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    placeholder="Enter your name">
+            </div>
+            <div>
+                <label class="block text-gray-700 mb-1">Age</label>
+                <input 
+                    type="number" 
+                    id="age" 
+                    required
+                    min="1"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    placeholder="Enter your age">
+            </div>
+            <button 
+                type="submit" 
+                class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
+                Submit
+            </button>
+        </form>
+
+        <div id="userCard" class="hidden mt-6 bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-medium text-gray-800 mb-4">Your Information</h2>
+            <p class="text-gray-700"><span class="font-semibold">Name:</span> <span id="cardName"></span></p>
+            <p class="text-gray-700"><span class="font-semibold">Age:</span> <span id="cardAge"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
